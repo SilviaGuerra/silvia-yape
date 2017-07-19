@@ -14,6 +14,10 @@
   /*height: 100%;*/
 }
 
+.texto-gris{
+  color: #8f8f8f;  
+}
+
 .carousel .carousel-item>img {
   height: 300px;
   width: 250px;
@@ -49,4 +53,24 @@
 
 #icon_telephone{
   width: 200px;
+}
+
+.arrow-left{
+  font-size: 45px;
+}
+
+#ingreso-codigosms{
+  margin-top: 350px;
+}
+
+#numero_ingresado{
+  font-weight: bold;
+}
+
+.candado{
+  width: 20px;
+}
+
+#codigosms{
+  width: 300px;
 }

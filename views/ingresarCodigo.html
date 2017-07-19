@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ingresar Codigo</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="materialize-css/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <article class="container-fluid">
+    <section class="row">
+      <div>
+        <i class="material-icons arrow-left">keyboard_arrow_left</i>
+      </div>
+      <div class="col s12 center titulo-validar">
+        <img src="img/message.png" alt="message" width="200">
+        <h3><strong>Ahora ingresa tu código</strong></h3>
+        <span class="texto-gris">Enviamos un SMS con el código de validación al número</span>
+        <span id="numero_ingresado"></span>
+      </div>
+      <div class="row">
+        <form id="ingreso-codigosms">
+          <div class="input-field col s12 center">
+            <img class="candado" src="img/lock.png" alt="candadito">
+            <!-- <i class="material-icons prefix">phone</i> -->
+            <input id="codigosms" type="tel" class="validate">
+            <label for="codigosms"></label>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <span class="col s12 center texto-gris">Reintentar en</span>
+        <img src="img/clock.png" alt="reloj">
+      </div>
+    </section>
+  </article>
+  <script src="jquery/dist/jquery.min.js"></script>
+  <script src="materialize-css/dist/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
