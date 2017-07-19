@@ -1,8 +1,52 @@
-.carrusel{
-  padding: 80px;
+/*.carrusel{
+  border: 1px solid black;
+  height: 500px;
+}*/
+
+/*img{
+  height: 300px;
+  width: 200px;
+}*/
+
+.container{
+  /*border: 1px solid black;*/
+  width: 100%;
+  /*height: 100%;*/
 }
 
-img{
-  height: 500px;
-  
+.carousel .carousel-item>img {
+  height: 300px;
+  width: 250px;
+}
+
+.carousel{
+  overflow: inherit;
+}
+
+.carousel.carousel-slider{
+  top: 60px;
+}
+
+.btn-registro{
+  margin-top: 200px;
+}
+
+.btn{
+  background: #fbd43b;
+}
+
+.indicators{
+  margin-top: 200px;
+}
+
+.titulo-validar{
+  margin-top: 40px;
+}
+
+.imagen-icono{
+  width: 80px;
+}
+
+#icon_telephone{
+  width: 200px;
 }
