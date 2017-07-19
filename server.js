@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(morgan(format));
 // app.use("/data", express.static(__dirname + "/data"));
 app.use("/static", express.static(__dirname + "/assets"));
-// app.use("/static", express.static(__dirname + "/views"));
+app.use("/static", express.static(__dirname + "/views"));
 app.use("/static", express.static(__dirname + "/node_modules"));
 
 
