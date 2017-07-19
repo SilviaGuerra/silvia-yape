@@ -18,7 +18,7 @@ var ingresoNumero = function(e){
 var aceptoTerminos = function(){
   var checkbox = $(".checkbox_terminos");
 
-  if(checkbox == false){
+  if(!checkbox.checked){
     $(".btn-continuar").removeAttr("disabled");
   } else {
     $(".btn-continuar").attr("disabled", true);
