@@ -7,8 +7,7 @@ var cargarPagina = function(){
   $("#ingreso-numero").keypress(ingresoNumero);
   $(".checkbox_terminos").click(ingresoNumero);
   $(".btn-continuar").click(generarCodigoAleatorio);
-  // $(".btn-continuar").click(metodoPost);
-
+  $(".modal-close").click(metodoPost);
 }
 
 var ingresoNumero = function(e){
@@ -45,6 +44,22 @@ var generarCodigoAleatorio = function (e) {
   var tuCodigo = $("<p>");
   tuCodigo.text(digito1 + digito2 + digito3);
   codigoAleatorio.append(tuCodigo);
+}
+
+var metodoPost = function(e){
+  e.preventDefault();
+
+  var phone = $("#icon_telephone").val()
+  var terms = $(".checkbox_terminos").val();
+
+  $.post(api.url, {phone: phone, terms: terms}, function(respuesta){
+    if(respuesta.success){
+      window.location.href = "ingresarCodigo.html";
+    }else{
+      $("#icon_telephone").attr("disabled", false);
+      alert(respuesta.message);
+    }
+  }, "json");
 }
 
 $(document).ready(cargarPagina);
