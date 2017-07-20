@@ -13,28 +13,15 @@ var ingresoNumero = function(e){
     return false;
   }
 
-  if(cuenta == 9){
-      $(".btn-continuar").removeAttr("disabled");
-  } else {
-    $(".btn-continuar").attr("disabled", true);
+  if(cuenta >= 10){
+    $("#icon_telephone").attr("disabled", true);
   }
 
+//ya no moverrrrr!!!!
+  if(cuenta == 10 && !checkbox.checked){
+    $(".btn-continuar").removeAttr("disabled");
+  }
 
-  // if(cuenta == 9){
-  //   if(!checkbox.checked){
-  //     $(".btn-continuar").removeAttr("disabled");
-  //   }
-  // }
-  // else if(cuenta > 9 ) {
-  //   $(".btn-continuar").attr("disabled", true);
-  // }
-
-
-  // if(){
-  //   $(".btn-continuar").removeAttr("disabled");
-  // } else {
-  //   $(".btn-continuar").attr("disabled", true);
-  // }
 }
 
 $(document).ready(cargarPagina);
