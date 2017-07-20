@@ -36,10 +36,23 @@
           </form>
         </div>
         <div class="row center">
-          <a class="waves-effect waves-light btn btn-continuar" href="ingresarCodigo.html" disabled>Continuar</a>
+          <a class="waves-effect waves-light btn btn-continuar" href="#modal1" disabled>Continuar</a>
+          <!-- href="ingresarCodigo.html" -->
         </div>
+
+        <!-- modal mostrando codigo aleatorio -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Tu código aleatorio es:</h4>
+            <p id="codigoAleatorio"></p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+          </div>
+        </div> <!-- fin del modal -->
       </section>
     </article>
+    <div id="result"></div>
     <script src="jquery/dist/jquery.min.js"></script>
     <script src="materialize-css/dist/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
