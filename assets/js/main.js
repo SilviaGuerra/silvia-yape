@@ -1,29 +1,40 @@
 var cargarPagina = function(){
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $("#ingreso-numero").keypress(ingresoNumero);
-  $(".checkbox_terminos").click(aceptoTerminos);
+  $(".checkbox_terminos").click(ingresoNumero);
 }
 
 var ingresoNumero = function(e){
   var ascii = e.keyCode;
   var cuenta = $("#icon_telephone").val().length;
-
-  if(cuenta == 9 && ascii >= 46) {
-    $(".btn-continuar").removeAttr("disabled");
-  }else if(cuenta <= 10 && ascii >= 59) {
-    $(".btn-continuar").attr("disabled", true);
-  }
-}
-
-var aceptoTerminos = function(){
   var checkbox = $(".checkbox_terminos");
 
-  if(!checkbox.checked){
-    $(".btn-continuar").removeAttr("disabled");
+  if(ascii <= 46 || ascii >= 59) {
+    return false;
+  }
+
+  if(cuenta == 9){
+      $(".btn-continuar").removeAttr("disabled");
   } else {
     $(".btn-continuar").attr("disabled", true);
   }
-}
 
+
+  // if(cuenta == 9){
+  //   if(!checkbox.checked){
+  //     $(".btn-continuar").removeAttr("disabled");
+  //   }
+  // }
+  // else if(cuenta > 9 ) {
+  //   $(".btn-continuar").attr("disabled", true);
+  // }
+
+
+  // if(){
+  //   $(".btn-continuar").removeAttr("disabled");
+  // } else {
+  //   $(".btn-continuar").attr("disabled", true);
+  // }
+}
 
 $(document).ready(cargarPagina);

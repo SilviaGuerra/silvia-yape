@@ -15,7 +15,7 @@
 }
 
 .texto-gris{
-  color: #8f8f8f;  
+  color: #8f8f8f;
 }
 
 .carousel .carousel-item>img {
@@ -53,6 +53,7 @@
 
 #icon_telephone{
   width: 200px;
+  text-align: center;
 }
 
 .arrow-left{
