@@ -7,7 +7,8 @@ var cargarPagina = function(){
   $("#ingreso-numero").keypress(ingresoNumero);
   $(".checkbox_terminos").click(ingresoNumero);
   $(".btn-continuar").click(generarCodigoAleatorio);
-  $(".modal-close").click(metodoPost);
+  $('.modal').modal();
+  // $("#codigosms").click(validarCodigo);
 }
 
 var ingresoNumero = function(e){
@@ -30,36 +31,32 @@ var ingresoNumero = function(e){
 }
 
 var generarCodigoAleatorio = function (e) {
-  $('.modal').modal();
-
-  var digito1=Math.floor(Math.random()*10).toString();
-  var digito2 = Math.floor(Math.random()*10).toString();
-  var digito3 = Math.floor(Math.random()*10).toString();
-  var codigoAleatorio = $("#codigoAleatorio");
-
-  localStorage.digito1=digito1;
-  localStorage.digito2=digito2;
-  localStorage.digito3=digito3;
-
-  var tuCodigo = $("<p>");
-  tuCodigo.text(digito1 + digito2 + digito3);
-  codigoAleatorio.append(tuCodigo);
-}
-
-var metodoPost = function(e){
   e.preventDefault();
 
-  var phone = $("#icon_telephone").val()
+  var phone = $("#icon_telephone").val();
   var terms = $(".checkbox_terminos").val();
 
   $.post(api.url, {phone: phone, terms: terms}, function(respuesta){
     if(respuesta.success){
-      window.location.href = "ingresarCodigo.html";
+      var codigoAleatorio = $("#codigoAleatorio");
+
+      var tuCodigo = $("<p>");
+      tuCodigo.text(respuesta.data.code);
+      codigoAleatorio.append(tuCodigo);
     }else{
       $("#icon_telephone").attr("disabled", false);
       alert(respuesta.message);
     }
   }, "json");
 }
+
+// var validarCodigo = function(){
+//   var telefonoRegistrado = $("#icon_telephone").val();
+//
+//   $.post(api.url, {phone: telefonoRegistrado}, function(telefono){
+//     console.log(telefonoRegistrado);
+//   });
+// }
+
 
 $(document).ready(cargarPagina);
