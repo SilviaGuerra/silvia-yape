@@ -8,7 +8,7 @@ var cargarPagina = function(){
   $(".checkbox_terminos").click(ingresoNumero);
   $(".btn-continuar").click(generarCodigoAleatorio);
   $('.modal').modal();
-  // $("#codigosms").click(validarCodigo);
+  $("#codigosms").keypress(validarCodigo);
 }
 
 var ingresoNumero = function(e){
@@ -50,13 +50,30 @@ var generarCodigoAleatorio = function (e) {
   }, "json");
 }
 
-// var validarCodigo = function(){
-//   var telefonoRegistrado = $("#icon_telephone").val();
-//
-//   $.post(api.url, {phone: telefonoRegistrado}, function(telefono){
-//     console.log(telefonoRegistrado);
-//   });
-// }
+var validarCodigo = function(e){
+  var codigosms = $("#codigosms").val().length;
+  var telefonoRegistrado = $("#codigosms").val();
+
+  var ascii = e.keyCode;
+  if(ascii <= 46 || ascii >= 59) {
+    return false;
+  }
+
+  if(codigosms >= 6){
+    // console.log("basta");
+    $("#codigosms").attr("disabled", true);
+
+    $.post(api.url, {phone: telefonoRegistrado}, function(codigoIngresado){
+      // console.log(codigoIngresado);
+      if(codigoIngresado.success){
+        console.log("wujuuu");
+      }
+      console.log("continua");
+    });
+  }
+
+
+}
 
 
 $(document).ready(cargarPagina);
